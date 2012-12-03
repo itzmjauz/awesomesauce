@@ -9,7 +9,6 @@ modkey = 'Mod4'
 
 terminal = 'terminator'
 browser = 'chromium'
-editor = os.getenv('EDITOR')
 
 layouts = {
     awful.layout.suit.fair,
