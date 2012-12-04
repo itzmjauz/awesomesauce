@@ -79,7 +79,7 @@ for s = 1, screen.count() do
 end
 
 -- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it works on any keyboard layout.
+-- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i=1, keynumber do
     globalkeys=awful.util.table.join(globalkeys,
@@ -111,6 +111,9 @@ clientbuttons=awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus=c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
+
+-- audio keybindings
+dofile(configdir .. 'audiokeys.lua')
 
 -- Set keys
 root.keys(globalkeys)
