@@ -53,15 +53,15 @@ globalkeys = awful.util.table.join(
         mypromptbox[mouse.screen]:run()
     end),
     awful.key({ modkey, 'Shift'   }, 'r', function ()
-        awful.prompt.run({ prompt='Run Lua code: ' },
+        awful.prompt.run({ prompt = 'Run Lua code: ' },
         mypromptbox[mouse.screen].widget,
         awful.util.eval, nil,
         awful.util.getdir('cache')..'/history_eval')
     end)
 )
 
-clientkeys=awful.util.table.join(
-    awful.key({ modkey,           }, 'f', function (c) c.fullscreen=not c.fullscreen end),
+clientkeys = awful.util.table.join(
+    awful.key({ modkey,           }, 'f', function (c) c.fullscreen = not c.fullscreen end),
     awful.key({ modkey, 'Shift'   }, 'c', function (c) c:kill() end),
     awful.key({ modkey, 'Control' }, 'space', awful.client.floating.toggle),
     awful.key({ modkey, 'Control' }, 'Return', function (c) c:swap(awful.client.getmaster()) end),
@@ -81,10 +81,10 @@ end
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i=1, keynumber do
-    globalkeys=awful.util.table.join(globalkeys,
+for i = 1, keynumber do
+    globalkeys = awful.util.table.join(globalkeys,
         awful.key({ modkey }, '#'..i + 9, function ()
-            local screen=mouse.screen
+            local screen = mouse.screen
             if tags[screen][i] then
                 awful.tag.viewonly(tags[screen][i])
             end
@@ -107,8 +107,8 @@ for i=1, keynumber do
         end))
 end
 
-clientbuttons=awful.util.table.join(
-    awful.button({ }, 1, function (c) client.focus=c; c:raise() end),
+clientbuttons = awful.util.table.join(
+    awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
 
