@@ -30,4 +30,5 @@ dofile(configdir .. 'keybindings.lua');
 dofile(configdir .. 'rules.lua');
 dofile(configdir .. 'signals.lua');
 
+awful.util.spawn('wmname LG3D')
 awful.util.spawn(home .. '/.configs/autorun')
