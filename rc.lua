@@ -1,34 +1,14 @@
--- Standard awesome library
-require('awful')
 require('errorhandler')
+require('beautiful').init(os.getenv('HOME') .. '/.configs/theme/awesome.lua')
 
-home = os.getenv('HOME')
-configdir = home .. '/.config/awesome/'
+require('rules')
+root.keys(require('bindings.global').keys)
 
-modkey = 'Mod4'
+require('wiboxes')
+require('wallpaper')
 
-terminal = 'terminator'
-browser = 'chromium'
-
-layouts = {
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.max.fullscreen
-}
-
-require('beautiful')
-beautiful.init(home .. '/.configs/theme/awesome.lua')
-dofile(configdir .. 'util.lua');
-dofile(configdir .. 'tags.lua');
-dofile(configdir .. 'wibox.lua');
-dofile(configdir .. 'keybindings.lua');
-dofile(configdir .. 'rules.lua');
-dofile(configdir .. 'signals.lua');
-
-awful.util.spawn('wmname LG3D')
-awful.util.spawn(home .. '/.configs/autostart')
+do
+  local awful = require('awful')
+  awful.util.spawn('wmname LG3D')
+  awful.util.spawn(os.getenv('HOME') .. '/.configs/autostart')
+end
