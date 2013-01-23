@@ -1,4 +1,5 @@
 local awful = require('awful')
+local layouts = require('layouts')
 
 local prefs = require('preferences')
 local modkey = prefs.modkey
