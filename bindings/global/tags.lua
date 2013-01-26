@@ -40,4 +40,12 @@ for i = 1, keynumber do
   )
 end
 
-return { keys = keys }
+local buttons = awful.util.table.join({} 
+, awful.button({ }, 1, awful.tag.viewonly)
+, awful.button({ modkey }, 1, awful.client.movetotag)
+, awful.button({ }, 3, awful.tag.viewtoggle)
+)
+
+return { keys = keys 
+       , buttons = buttons
+       }
