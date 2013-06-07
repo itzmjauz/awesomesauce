@@ -8,6 +8,9 @@ local keys = awful.util.table.join({}
   ,    awful.key({ }, "XF86AudioMute",         function () sayShell('amixer set Master togglemute') end)
   ,    awful.key({ }, "XF86Tools",             function () sayShell('amixer set Master unmute') end)
   ,    awful.key({ }, "XF86AudioRaiseVolume",  function () sayShell('amixer set Master 10%+')  end)
-  ,    awful.key({ }, "XF86AudioLowerVolume",  function () sayShell('amixer set Master 10%-') end)
+  ,    awful.key({'Shift'}, "XF86AudioRaiseVolume",  function () sayShell('amixer set Master 1%+')  end)
+  ,    awful.key({}, "XF86AudioLowerVolume",  function () sayShell('amixer set Master 10%-') end)
+  ,    awful.key({'Shift'}, "XF86AudioLowerVolume",  function () sayShell('amixer set Master 1%-') end)
+
 )
 return { keys = keys }
