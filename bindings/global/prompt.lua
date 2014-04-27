@@ -14,6 +14,7 @@ local keys = awful.util.table.join({}
                       , awful.util.getdir('cache') .. '/history_eval'
                       )
     end)
+  , require('bindings.global.prompt.pass').keys
   )
 
 return { keys = keys }
