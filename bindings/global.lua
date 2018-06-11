@@ -12,6 +12,8 @@ local keys = awful.util.table.join({}
   , require('bindings.global.programs').keys
   , require('bindings.global.prompt').keys
   , require('bindings.global.audiokeys').keys
+  , require('bindings.global.keyboard').keys
+  , require('bindings.global.lightkeys').keys
   )
 
 return { keys = keys }
